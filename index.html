@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Banner Section */
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 80vh; /* Takes the full viewport height */
+      overflow: hidden;
+    }
+
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('rc.gif') center center/cover no-repeat;
+      z-index: -1;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .buttons img {
+      width: 200px;
+      height: 100px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1); /* Start at normal size */
+      }
+      50% {
+        transform: scale(1.1); /* Slightly larger */
+      }
+      100% {
+        transform: scale(1); /* Return to normal size */
+      }
+    }
+
+    /* Marquee Section */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background-color: #ffffff;
+      padding: 20px;
+    }
+
+    .marquee {
+      display: flex;
+      animation: scroll 10s linear infinite;
+    }
+
+    .marquee img {
+      width: 200px;
+      margin-right: 80px;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+
+/* Horizontal Scrolling GIF Section */
+.gif-scroll-container {
+  overflow: hidden;
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border: 1px solid #ddd; /* Add border around the section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for clean look */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.gif-grid-scroll {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 15px; /* Gap between GIFs for better spacing */
+  animation: scroll-gif-grid 5s linear infinite;
+  padding: 10px;
+}
+
+.gif-grid-scroll img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc; /* Border around each GIF */
+  border-radius: 8px; /* Rounded corners for each GIF */
+  padding: 5px; /* Inner padding for each GIF */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow around each GIF */
+}
+
+/* Smooth hover effect */
+.gif-grid-scroll img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+@keyframes scroll-gif-grid {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-5%); /* Scroll only halfway to create a continuous loop */
+  }
+}
+
+
+
+    /* Socials Section */
+    .socials {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background-color: #ffffff;
+    }
+
+    .socials img {
+      width: 40px;
+      height: 40px;
+      margin: 0 10px;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+
+    .socials img:hover {
+      filter: grayscale(0%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner Section -->
+  <section class="banner">
+    <div class="buttons">
+      <img src="Untitled (500 x 300 px) (1).png" alt="Button 1">
+      <img src="Untitled (500 x 300 px) (2).png" alt="Button 2">
+      <img src="Untitled (500 x 300 px) (3).png" alt="Button 3">
+    </div>
+  </section>
+
+  <!-- Marquee Section -->
+  <section class="marquee-container">
+    <div class="marquee">
+      <img src="image-removebg-preview (49).png" alt="Marquee Image 1">
+      <img src="image-removebg-preview (49).png" alt="Marquee Image 2">
+      <img src="image-removebg-preview (49).png" alt="Marquee Image 3">
+      <img src="image-removebg-preview (49).png" alt="Marquee Image 4">
+      <img src="image-removebg-preview (49).png" alt="Marquee Image 5">
+      <img src="image-removebg-preview (49).png" alt="Marquee Image 6">
+    </div>
+  </section>
+
+<!-- Scrolling GIF Section -->
+<section class="gif-scroll-container">
+    <div class="gif-grid-scroll">
+      <!-- Original 4x2 Grid (8 GIFs total) -->
+      <img src="1.gif" alt="GIF 1">
+      <img src="2.gif" alt="GIF 2">
+      <img src="3.gif" alt="GIF 3">
+      <img src="4.gif" alt="GIF 4">
+      <img src="5.gif" alt="GIF 5">
+      <img src="6.gif" alt="GIF 6">
+      <img src="7.gif" alt="GIF 7">
+      <img src="8.gif" alt="GIF 8">
+    </div>
+  </section>
+  
+
+<!-- Socials Section -->
+<section class="socials">
+    <a href="https://x.com/recoil_solana" target="_blank">
+      <img src="images.png" alt="Twitter">
+    </a>
+    <a href="https://t.me/+Xm7gRAQrbuYwZmQ0" target="_blank">
+      <img src="images (1).png" alt="Telegram">
+    </a>
+  </section>
+  
+
+</body>
+</html>
